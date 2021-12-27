@@ -1,4 +1,4 @@
-package com.isep.series;
+package com.isep.series.models;
 
 public class Series {
 

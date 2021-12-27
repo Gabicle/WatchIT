@@ -1,4 +1,4 @@
-package com.isep.series;
+package com.isep.series.adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -9,6 +9,9 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.isep.series.R;
+import com.isep.series.models.Series;
 
 import java.util.List;
 

@@ -8,19 +8,43 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.viewpager2.widget.ViewPager2;
+
+import com.google.android.material.tabs.TabLayout;
+import com.google.android.material.tabs.TabLayoutMediator;
+import com.isep.series.series.SeriesPagerAdapter;
 
 import java.util.List;
 
 public class SeriesFragment extends Fragment {
 
+    private String[] titles = new String[] {"WatchList", "Upcoming"};
+
+    SeriesPagerAdapter seriesPagerAdapter;
+   TabLayout tabLayout;
+   ViewPager2 viewPager2;
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
+        FragmentManager  fm = getActivity().getSupportFragmentManager();
+//        getSupportActionBar().hide();
+        View view = inflater.inflate(R.layout.fragment_series, container, false);
+
+        viewPager2 = view.findViewById(R.id.series_viewpager);
+        tabLayout = view.findViewById(R.id.seriesTabLay);
+        seriesPagerAdapter = new SeriesPagerAdapter(fm, getLifecycle());
+
+        viewPager2.setAdapter(seriesPagerAdapter);
+        new TabLayoutMediator(tabLayout, viewPager2, ((tab, position) -> tab.setText(titles[position]))).attach();
 
 
 
-
-        return inflater.inflate(R.layout.fragment_series, container, false);
+        return view;
     }
+
+
+
 }

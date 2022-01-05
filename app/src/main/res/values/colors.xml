@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="myP">#151c25</color>
-    <color name="myPDark">#151c25</color>
+    <color name="myPDark">#005F61</color>
     <color name="myAccent">#f1b814</color>
     <color name="purple_200">#FFBB86FC</color>
     <color name="purple_500">#FF6200EE</color>

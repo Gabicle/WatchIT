@@ -3,6 +3,20 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/PersonalProjects/AndroidProjects/Final Year Android Project/WatchIT/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2703125" />
+        <entry key="..\:/PersonalProjects/AndroidProjects/Final Year Android Project/WatchIT/app/src/main/res/drawable/ic_baseline_check_circle_outline_24.xml" value="0.14635416666666667" />
+        <entry key="..\:/PersonalProjects/AndroidProjects/Final Year Android Project/WatchIT/app/src/main/res/drawable/ic_baseline_person_24.xml" value="0.14270833333333333" />
+        <entry key="..\:/PersonalProjects/AndroidProjects/Final Year Android Project/WatchIT/app/src/main/res/drawable/ic_baseline_play_circle_filled_24.xml" value="0.14635416666666667" />
+        <entry key="..\:/PersonalProjects/AndroidProjects/Final Year Android Project/WatchIT/app/src/main/res/drawable/ic_baseline_tv_24.xml" value="0.14635416666666667" />
+        <entry key="..\:/PersonalProjects/AndroidProjects/Final Year Android Project/WatchIT/app/src/main/res/drawable/ic_launcher_background.xml" value="0.14270833333333333" />
+        <entry key="..\:/PersonalProjects/AndroidProjects/Final Year Android Project/WatchIT/app/src/main/res/drawable/series_container_bg.xml" value="0.14635416666666667" />
+        <entry key="..\:/PersonalProjects/AndroidProjects/Final Year Android Project/WatchIT/app/src/main/res/layout/activity_login.xml" value="0.20697463768115942" />
+        <entry key="..\:/PersonalProjects/AndroidProjects/Final Year Android Project/WatchIT/app/src/main/res/layout/activity_register.xml" value="0.20697463768115942" />
+        <entry key="..\:/PersonalProjects/AndroidProjects/Final Year Android Project/WatchIT/app/src/main/res/layout/fragment_discover.xml" value="0.20697463768115942" />
+        <entry key="..\:/PersonalProjects/AndroidProjects/Final Year Android Project/WatchIT/app/src/main/res/layout/fragment_upcoming.xml" value="0.20697463768115942" />
+        <entry key="..\:/PersonalProjects/AndroidProjects/Final Year Android Project/WatchIT/app/src/main/res/layout/fragment_watch_list.xml" value="0.20697463768115942" />
+        <entry key="..\:/PersonalProjects/AndroidProjects/Final Year Android Project/WatchIT/app/src/main/res/layout/item_profile_series.xml" value="0.20697463768115942" />
+        <entry key="..\:/PersonalProjects/AndroidProjects/Final Year Android Project/WatchIT/app/src/main/res/layout/item_user_series.xml" value="0.13020833333333334" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/Series/app/src/main/res/drawable/btn_add_style.xml" value="0.10462962962962963" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/Series/app/src/main/res/drawable/gradient_bg.xml" value="0.2128205128205128" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/Series/app/src/main/res/layout/activity_main.xml" value="0.18" />

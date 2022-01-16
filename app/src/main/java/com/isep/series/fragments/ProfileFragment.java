@@ -32,12 +32,12 @@ public class ProfileFragment extends Fragment {
         List<Series>  seriesList = new ArrayList<>();
 
         //TODO: PUT THE USER'S SERIES LIST HERE
-        seriesList.add(new Series("Moana", R.drawable.timg1));
+      /*  seriesList.add(new Series("Moana", R.drawable.timg1));
         seriesList.add(new Series("Moana", R.drawable.timg1));
         seriesList.add(new Series("Constantine", R.drawable.timg2));
         seriesList.add(new Series("Constantine", R.drawable.timg2));
         seriesList.add(new Series("Oralsese", R.drawable.timg1));
-        seriesList.add(new Series("Oralsese", R.drawable.timg1));
+        seriesList.add(new Series("Oralsese", R.drawable.timg1));*/
 
         profileRV = view.findViewById(R.id.rv_profile_series);
 

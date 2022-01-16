@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.isep.series.R;
 import com.isep.series.models.Series;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -38,7 +39,12 @@ public class ProfileAdapter extends RecyclerView.Adapter<ProfileAdapter.MyViewHo
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
 
         holder.seriesTitle.setText(mData.get(position).getTitle());
-        holder.seriesImg.setImageResource(mData.get(position).getThumbnail());
+        Picasso.get()
+                .load(mData.get(position).getThumbnail()) // Equivalent of what ends up in onBitmapLoaded
+                .placeholder(R.mipmap.ic_launcher)
+                .centerCrop()
+                .fit()
+                .into(holder.seriesImg);
     }
 
     @Override

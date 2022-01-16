@@ -54,13 +54,13 @@ public class WatchListFragment extends Fragment {
     //TODO: LOAD USER SERIES DATA
     private void initmdataSeries() {
         mdata = new ArrayList<>();
-
+/*
         //FOR PERSONAL TESTING OF UI (TO BE DELETED)
         mdata.add(new Series("The Crown", R.drawable.testimg1, "S01"));
         mdata.add(new Series("The Crown", R.drawable.testimg1, "S01"));
         mdata.add(new Series("The Crown", R.drawable.testimg1, "S01"));
         mdata.add(new Series("The Crown", R.drawable.testimg1, "S01"));
-        mdata.add(new Series("The Crown", R.drawable.testimg1, "S01"));
+        mdata.add(new Series("The Crown", R.drawable.testimg1, "S01"));*/
     }
 
     private void initViews(View view) {

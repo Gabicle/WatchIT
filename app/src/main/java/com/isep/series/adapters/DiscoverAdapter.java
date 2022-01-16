@@ -10,8 +10,10 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.isep.series.R;
 import com.isep.series.models.Series;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -19,17 +21,16 @@ public class DiscoverAdapter extends RecyclerView.Adapter<DiscoverAdapter.MyView
 
     Context mContext;
     List<Series> mData;
-
-    public DiscoverAdapter(Context mContext, List<Series> mData) {
+    /*public DiscoverAdapter(Context mContext, List<Series> mData) {
         this.mContext = mContext;
         this.mData = mData;
     }
-
+*/
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
-        View view = LayoutInflater.from(mContext).inflate(R.layout.item_discover_card, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_discover_card, parent, false);
 
 
         return new MyViewHolder(view);
@@ -37,16 +38,27 @@ public class DiscoverAdapter extends RecyclerView.Adapter<DiscoverAdapter.MyView
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-
-        holder.series_photo.setImageResource(mData.get(position).getThumbnail());
-        holder.series_title.setText(mData.get(position).getTitle());
+        Series series = mData.get(position);
+        holder.series_title.setText(series.getTitle());
         //TODO: MIGHT WANT TO ADD THE SEASONS STRING TO THE MODEL INSTEAD
-        holder.series_seasons.setText(mData.get(position).getSeasons());
+        holder.series_seasons.setText(series.getSeasons());
+        if(series.getImage() != null)
+        {
+            String imageUrl = series.getImage().
+                    replace("http://","https://");
+
+            Glide.with(holder.itemView)
+                    .load(imageUrl)
+                    .into(holder.series_photo);
+        }
     }
 
     @Override
     public int getItemCount() {
-        return mData.size();
+        if(mData != null)
+            return mData.size();
+        else
+            return 0;
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder{
@@ -60,5 +72,10 @@ public class DiscoverAdapter extends RecyclerView.Adapter<DiscoverAdapter.MyView
             series_title = itemView.findViewById(R.id.discover_series_title);
             series_seasons = itemView.findViewById(R.id.discover_series_seasons);
         }
+    }
+
+    public void setmData(List<Series> mData) {
+        this.mData = mData;
+        notifyDataSetChanged();
     }
 }

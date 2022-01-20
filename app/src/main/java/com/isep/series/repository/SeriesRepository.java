@@ -26,7 +26,7 @@ public class SeriesRepository {
     public SeriesRepository(Application application){
         database= SeriesRoomDatabase.getDatabase(application);
         seriesDAO=database.seriesDAO();
-        allTvSeries =seriesDAO.getAllTvSeries();
+        allTvSeries =  seriesDAO.getAllTvSeries();
 
     }
 
@@ -42,13 +42,15 @@ public class SeriesRepository {
 
     public void getTvSeriesFromAPI() {
 
-        apiClient.getMyApi().getAllTvSeries()
+        apiClient.getMyApi().getAllTvSeries(10)
                 .enqueue(new Callback<allTvSeries>() {
                     @Override
                     public void onResponse(Call<allTvSeries> call, Response<allTvSeries> response) {
                         if(response.body() != null)
                         {
+                            Log.d("getAllTvSeries", "About to Insert items to db: ");
                             InsertAll(response.body().getItems());
+                            Log.d("getAllTvSeries", "Done inserting data to db: ");
                         }
                     }
 

@@ -2,6 +2,7 @@ package com.isep.series.models.Entities;
 
 import androidx.annotation.NonNull;
 import androidx.room.Entity;
+import androidx.room.Index;
 import androidx.room.PrimaryKey;
 
 import com.google.gson.annotations.Expose;
@@ -9,18 +10,26 @@ import com.google.gson.annotations.SerializedName;
 
 import org.jetbrains.annotations.Nullable;
 
-@Entity(tableName ="TV_Series")
+@Entity(tableName ="TV_Series",indices = @Index(value = {"id"},unique = true))
 public class Series {
 
     @PrimaryKey
     @NonNull
+    @SerializedName("id")
+    @Expose
     private String id;
-
+    @SerializedName("rank")
+    @Expose
     private String rank;
+
+    @SerializedName("title")
+    @Expose
     private String title;
 
-
+    @SerializedName("fullTitle")
+    @Expose
     private String fullTitle;
+
 
     public String getId() {
         return id;

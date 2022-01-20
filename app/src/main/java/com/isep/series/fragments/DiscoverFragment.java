@@ -64,8 +64,8 @@ public class DiscoverFragment extends Fragment {
 
 
         //sets status bar to transparent
-        Window w = getActivity().getWindow();
-        w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
+//        Window w = getActivity().getWindow();
+//        w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
 
         //RECYCLER VIEW ADAPTER SETUP
         discoverRV = view.findViewById(R.id.rv_discover_series);

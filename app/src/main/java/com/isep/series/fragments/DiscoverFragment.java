@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.EditText;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -29,7 +30,6 @@ public class DiscoverFragment extends Fragment {
     private RecyclerView discoverRV;
     private TvSeriesViewModel viewModel;
     private DiscoverAdapter discoverAdapter;
-
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {

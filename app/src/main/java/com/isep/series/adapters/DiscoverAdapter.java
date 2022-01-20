@@ -16,12 +16,13 @@ import com.isep.series.R;
 import com.isep.series.helpers.SeriesDiffCallback;
 import com.isep.series.models.Entities.Series;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class DiscoverAdapter extends RecyclerView.Adapter<DiscoverAdapter.MyViewHolder> {
 
     Context mContext;
-    List<Series> mData;
+    List<Series> mData = new ArrayList<>();
     /*public DiscoverAdapter(Context mContext, List<Series> mData) {
         this.mContext = mContext;
         this.mData = mData;

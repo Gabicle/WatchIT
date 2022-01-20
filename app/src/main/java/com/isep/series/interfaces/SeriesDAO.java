@@ -19,7 +19,7 @@ public interface SeriesDAO {
     @Query("DELETE FROM  TV_Series")
      void DeleteAll();
 
-    @Query("SELECT * FROM TV_Series ORDER BY imDbRating DESC")
+    @Query("SELECT DISTINCT * FROM TV_Series")
      LiveData<List<Series>> getAllTvSeries();
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)

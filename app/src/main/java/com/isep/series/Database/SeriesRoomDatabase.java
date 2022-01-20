@@ -15,7 +15,7 @@ import com.isep.series.models.Entities.Series;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-@Database(entities = {Series.class},version = 1, exportSchema = false)
+@Database(entities = {Series.class},version = 2, exportSchema = false)
 public abstract class SeriesRoomDatabase  extends RoomDatabase {
 
 

@@ -47,7 +47,7 @@ public class DiscoverFragment extends Fragment {
             public void onChanged(List<Series> seriesList) {
 
                 discoverAdapter.setmData(seriesList);
-                Log.d("main", "onChanged: "+ seriesList);
+                Log.d("main", "onChanged: "+ seriesList.get(0).getFullTitle());
             }
         });
     }

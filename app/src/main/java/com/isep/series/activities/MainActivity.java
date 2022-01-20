@@ -1,17 +1,26 @@
-package com.isep.series;
+package com.isep.series.activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 
 import android.os.Bundle;
 import android.view.MenuItem;
 
-import com.google.android.material.bottomnavigation.BottomNavigationItemView;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
+import com.isep.series.R;
+import com.isep.series.fragments.DiscoverFragment;
+import com.isep.series.fragments.ProfileFragment;
+import com.isep.series.fragments.SeriesFragment;
+import com.isep.series.repository.SeriesRepository;
+import com.isep.series.viewmodels.TvSeriesViewModel;
 
 public class MainActivity extends AppCompatActivity {
+
+    private TvSeriesViewModel viewModel;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +31,8 @@ public class MainActivity extends AppCompatActivity {
         bottomNav.setOnItemSelectedListener(navListener);
 
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new SeriesFragment()).commit();
+        viewModel =  new ViewModelProvider(this).get(TvSeriesViewModel.class);
+        viewModel.makeAPICalls(); // make the api call here to populate db with data
     }
 
     private NavigationBarView.OnItemSelectedListener navListener = new NavigationBarView.OnItemSelectedListener() {

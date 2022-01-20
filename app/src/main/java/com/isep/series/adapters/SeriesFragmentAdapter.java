@@ -1,4 +1,4 @@
-package com.isep.series.series;
+package com.isep.series.adapters;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,7 +13,7 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.bitmap.CenterCrop;
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
 import com.isep.series.R;
-import com.isep.series.Series;
+import com.isep.series.models.Entities.Series;
 
 import java.util.List;
 
@@ -39,7 +39,7 @@ public class SeriesFragmentAdapter extends RecyclerView.Adapter<SeriesFragmentAd
         //BINDS SERIES ITEM DATA HERE
 
         Glide.with(holder.itemView.getContext())
-                .load(mdata.get(position).getThumbnail())
+                .load(mdata.get(position).getImage())
                 .transform(new CenterCrop(), new RoundedCorners(16))
                 .into(holder.imgSeries);
 

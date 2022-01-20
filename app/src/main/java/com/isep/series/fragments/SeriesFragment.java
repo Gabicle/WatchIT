@@ -1,4 +1,4 @@
-package com.isep.series;
+package com.isep.series.fragments;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -13,7 +13,8 @@ import androidx.viewpager2.widget.ViewPager2;
 
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
-import com.isep.series.series.SeriesPagerAdapter;
+import com.isep.series.R;
+import com.isep.series.adapters.SeriesPagerAdapter;
 
 import java.util.List;
 
@@ -22,8 +23,8 @@ public class SeriesFragment extends Fragment {
     private String[] titles = new String[] {"WatchList", "Upcoming"};
 
     SeriesPagerAdapter seriesPagerAdapter;
-   TabLayout tabLayout;
-   ViewPager2 viewPager2;
+    TabLayout tabLayout;
+    ViewPager2 viewPager2;
 
     @Nullable
     @Override

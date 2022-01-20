@@ -1,4 +1,4 @@
-package com.isep.series.series;
+package com.isep.series.adapters;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -6,6 +6,9 @@ import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.Lifecycle;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
+
+import com.isep.series.fragments.UpcomingFragment;
+import com.isep.series.fragments.WatchListFragment;
 
 import java.util.ArrayList;
 import java.util.List;

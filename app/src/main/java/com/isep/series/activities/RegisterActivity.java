@@ -1,7 +1,10 @@
-package com.isep.series;
+package com.isep.series.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.isep.series.R;
+
 
 /**
  * REGISTER ACTIVITY

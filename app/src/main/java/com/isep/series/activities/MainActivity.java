@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
                     selectedFragment = new SeriesFragment();
                     break;
                 case R.id.nav_discover:
-                    selectedFragment = new DiscoverFragment();
+                    selectedFragment = new DiscoverFragment(getSupportFragmentManager());
                     break;
                 case R.id.nav_profile:
                 selectedFragment = new ProfileFragment();

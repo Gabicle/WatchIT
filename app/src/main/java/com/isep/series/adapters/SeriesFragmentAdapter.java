@@ -1,5 +1,6 @@
 package com.isep.series.adapters;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -7,22 +8,27 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.DiffUtil;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.bitmap.CenterCrop;
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
 import com.isep.series.R;
+import com.isep.series.helpers.SeriesDiffCallback;
 import com.isep.series.models.Entities.Series;
+import com.isep.series.viewmodels.TvSeriesViewModel;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class SeriesFragmentAdapter extends RecyclerView.Adapter<SeriesFragmentAdapter.ViewHolder> {
 
-    List<Series> mdata;
+    List<Series> mData = new ArrayList<>();
+    private TvSeriesViewModel viewModel;
 
-    public SeriesFragmentAdapter(List<Series> mdata) {
-        this.mdata = mdata;
+    public SeriesFragmentAdapter(TvSeriesViewModel viewModel) {
+        this.viewModel = viewModel;
     }
 
     @NonNull
@@ -35,19 +41,27 @@ public class SeriesFragmentAdapter extends RecyclerView.Adapter<SeriesFragmentAd
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+        Series series = mData.get(position);
+        //TODO: MIGHT WANT TO ADD THE SEASONS STRING TO THE MODEL INSTEAD
+        //holder.series_seasons.setText(series.getSeasons());
+        if(series.getImage() != null)
+        {
+            String imageUrl = series.getImage().
+                    replace("http://","https://");
 
-        //BINDS SERIES ITEM DATA HERE
-
-        Glide.with(holder.itemView.getContext())
-                .load(mdata.get(position).getImage())
-                .transform(new CenterCrop(), new RoundedCorners(16))
-                .into(holder.imgSeries);
+            Glide.with(holder.itemView)
+                    .load(imageUrl)
+                    .into(holder.imgSeries);
+        }
 
     }
 
     @Override
     public int getItemCount() {
-        return mdata.size();
+        if(mData != null)
+            return mData.size();
+        else
+            return 0;
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{
@@ -68,4 +82,19 @@ public class SeriesFragmentAdapter extends RecyclerView.Adapter<SeriesFragmentAd
 
         }
     }
+
+    public void setmData(List<Series> mData) {
+
+        final SeriesDiffCallback diffCallback = new SeriesDiffCallback(this.mData, mData);
+        final DiffUtil.DiffResult diffResult = DiffUtil.calculateDiff(diffCallback);
+
+        if(this.mData != null)
+        {
+            this.mData.clear();
+            this.mData.addAll(mData);
+        }
+        diffResult.dispatchUpdatesTo(this);
+
+    }
+
 }

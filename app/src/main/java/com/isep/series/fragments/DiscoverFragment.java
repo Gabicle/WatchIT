@@ -1,5 +1,6 @@
 package com.isep.series.fragments;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -12,6 +13,7 @@ import android.widget.EditText;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.lifecycle.ViewModelProviders;
@@ -30,17 +32,20 @@ public class DiscoverFragment extends Fragment {
     private RecyclerView discoverRV;
     private TvSeriesViewModel viewModel;
     private DiscoverAdapter discoverAdapter;
+    private FragmentManager fragmentManager;
+
+    public DiscoverFragment(FragmentManager fragmentManager)
+    {
+        this.fragmentManager = fragmentManager;
+    }
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-
-        discoverAdapter = new DiscoverAdapter();
-
         viewModel = new ViewModelProvider(this).get(TvSeriesViewModel.class);
 
-        discoverAdapter = new DiscoverAdapter();
+        discoverAdapter = new DiscoverAdapter(viewModel,fragmentManager);
 
         viewModel.getAllTvSeries().observe(this, new Observer<List<Series>>() {
             @Override
@@ -61,6 +66,7 @@ public class DiscoverFragment extends Fragment {
 
 
         View view = inflater.inflate(R.layout.fragment_discover, container, false);
+
 
 
         //sets status bar to transparent

@@ -4,30 +4,44 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
+import androidx.lifecycle.ViewModel;
 import androidx.recyclerview.widget.DiffUtil;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.isep.series.R;
+import com.isep.series.fragments.WatchListFragment;
 import com.isep.series.helpers.SeriesDiffCallback;
 import com.isep.series.models.Entities.Series;
+import com.isep.series.models.Entities.WatchList;
+import com.isep.series.repository.WatchListRepository;
+import com.isep.series.viewmodels.TvSeriesViewModel;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class DiscoverAdapter extends RecyclerView.Adapter<DiscoverAdapter.MyViewHolder> {
 
-    Context mContext;
+    private TvSeriesViewModel viewModel;
     List<Series> mData = new ArrayList<>();
-    /*public DiscoverAdapter(Context mContext, List<Series> mData) {
-        this.mContext = mContext;
-        this.mData = mData;
+    private FragmentManager fragmentManager;
+
+
+    public DiscoverAdapter(TvSeriesViewModel viewModel, FragmentManager fragmentManager) {
+
+        this.viewModel =  viewModel;
+        this.fragmentManager =  fragmentManager;
+
     }
-*/
+
 
     @NonNull
     @Override
@@ -53,10 +67,22 @@ public class DiscoverAdapter extends RecyclerView.Adapter<DiscoverAdapter.MyView
             Glide.with(holder.itemView)
                     .load(imageUrl)
                     .into(holder.series_photo);
-                    //.fitCenter().apply
-
-
         }
+
+        holder.add_watchlist.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                WatchList  watchList =  new WatchList();
+                watchList.setSeriesId(series.getId());
+                viewModel.SaveWatchList(watchList);
+
+                Fragment fragment = new WatchListFragment();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.replace(R.id.fragment_container, fragment);
+                fragmentTransaction.commit();
+
+
+            }
+        });
     }
 
     @Override
@@ -70,13 +96,17 @@ public class DiscoverAdapter extends RecyclerView.Adapter<DiscoverAdapter.MyView
     public class MyViewHolder extends RecyclerView.ViewHolder{
         ImageView series_photo;
         TextView series_title, series_seasons;
+        Button add_watchlist ;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
 
             series_photo = itemView.findViewById(R.id.discover_card_bg);
+            add_watchlist = itemView.findViewById(R.id.btn_add);
+
             series_title = itemView.findViewById(R.id.discover_series_title);
             series_seasons = itemView.findViewById(R.id.discover_series_seasons);
+
         }
     }
 

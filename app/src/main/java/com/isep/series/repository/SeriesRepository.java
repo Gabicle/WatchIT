@@ -6,7 +6,9 @@ import android.util.Log;
 import androidx.lifecycle.LiveData;
 
 import com.isep.series.Database.SeriesRoomDatabase;
+import com.isep.series.interfaces.WatchListDAO;
 import com.isep.series.models.Entities.Series;
+import com.isep.series.models.Entities.WatchList;
 import com.isep.series.network.APIClient;
 import com.isep.series.interfaces.SeriesDAO;
 import com.isep.series.models.allTvSeries;
@@ -20,13 +22,16 @@ import retrofit2.Response;
 public class SeriesRepository {
 
     public SeriesDAO seriesDAO;
-    public LiveData<List<Series>> allTvSeries;
+      public LiveData<List<Series>> allTvSeries;
+      public LiveData<List<Series>> watchList;
     private SeriesRoomDatabase database;
     private APIClient apiClient =  new APIClient();
     public SeriesRepository(Application application){
         database= SeriesRoomDatabase.getDatabase(application);
         seriesDAO=database.seriesDAO();
         allTvSeries =  seriesDAO.getAllTvSeries();
+        watchList = seriesDAO.getWatchList();
+
 
     }
 
@@ -38,6 +43,12 @@ public class SeriesRepository {
     public LiveData<List<Series>> getAllTvSeries(){
         return allTvSeries;
     }
+
+    public LiveData<List<Series>> getWatchList(){
+        return watchList;
+    }
+
+
 
 
     public void getTvSeriesFromAPI() {
@@ -68,12 +79,14 @@ public class SeriesRepository {
         {
             this.seriesDAO = seriesDao;
         }
+
         @Override
         protected Void doInBackground(List<Series>... lists) {
             seriesDAO.InsertAll(lists[0]);
             return null;
         }
     }
+
 
     }
 

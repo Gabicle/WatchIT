@@ -30,22 +30,25 @@ public class SeriesFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-        FragmentManager  fm = getActivity().getSupportFragmentManager();
+
 //        getSupportActionBar().hide();
         View view = inflater.inflate(R.layout.fragment_series, container, false);
 
+
+        return view;
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState)
+    {
+        FragmentManager  fm = getActivity().getSupportFragmentManager();
         viewPager2 = view.findViewById(R.id.series_viewpager);
         tabLayout = view.findViewById(R.id.seriesTabLay);
         seriesPagerAdapter = new SeriesPagerAdapter(fm, getLifecycle());
 
         viewPager2.setAdapter(seriesPagerAdapter);
         new TabLayoutMediator(tabLayout, viewPager2, ((tab, position) -> tab.setText(titles[position]))).attach();
-
-
-
-        return view;
     }
-
 
 
 }

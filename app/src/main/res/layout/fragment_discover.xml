@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/black"
     >
 
     <!--    <TextView-->
@@ -27,13 +28,14 @@
 
     <EditText
         android:id="@+id/search_input"
-        android:hint="search"
+        android:hint="Search"
         android:drawableLeft="@drawable/ic_baseline_search_24"
         android:drawablePadding="8dp"
         android:textColor="@color/white"
         android:background="@drawable/search_input_dark_style"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:textColorHint="#e5e5e5"
         android:layout_marginStart="24dp"
         android:layout_marginLeft="24dp"
         android:layout_marginTop="8dp"

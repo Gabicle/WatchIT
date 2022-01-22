@@ -28,7 +28,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/imageView2"
         app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/testimg1" />
+        />
 
     <TextView
         android:id="@+id/wl_series_title"

@@ -5,8 +5,11 @@ import androidx.room.Dao;
 import androidx.room.Insert;
 import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
+import androidx.room.RewriteQueriesToDropUnusedColumns;
+import androidx.room.Transaction;
 
 import com.isep.series.models.Entities.Series;
+import com.isep.series.models.Entities.WatchList;
 
 import java.util.List;
 
@@ -24,5 +27,13 @@ public interface SeriesDAO {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     void InsertAll(List<Series>SeriesEntities);
+
+
+    @Query(
+            "SELECT * FROM TV_Series S JOIN Watch_List W ON S.id = W.seriesId"
+    )
+    @RewriteQueriesToDropUnusedColumns
+    LiveData<List<Series>>getWatchList();     // return movies added in the watch list'
+
 
 }

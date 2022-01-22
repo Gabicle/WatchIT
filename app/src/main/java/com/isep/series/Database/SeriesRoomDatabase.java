@@ -10,16 +10,19 @@ import androidx.room.RoomDatabase;
 import androidx.sqlite.db.SupportSQLiteDatabase;
 
 import com.isep.series.interfaces.SeriesDAO;
+import com.isep.series.interfaces.WatchListDAO;
 import com.isep.series.models.Entities.Series;
+import com.isep.series.models.Entities.WatchList;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-@Database(entities = {Series.class},version = 2, exportSchema = false)
+@Database(entities = {Series.class, WatchList.class},version = 3, exportSchema = false)
 public abstract class SeriesRoomDatabase  extends RoomDatabase {
 
 
     public abstract SeriesDAO seriesDAO();
+    public abstract WatchListDAO watchListDAO();
 
     private static volatile SeriesRoomDatabase INSTANCE;
     private static final int NUMBER_OF_THREADS = 4;
@@ -63,13 +66,16 @@ public abstract class SeriesRoomDatabase  extends RoomDatabase {
 
     static  class  PopulateDbAsyn extends AsyncTask<Void,Void,Void> {
         private SeriesDAO seriesDAO;
+        private WatchListDAO watchListDAO;
         public PopulateDbAsyn(SeriesRoomDatabase seriesRoomDatabase)
         {
             seriesDAO=seriesRoomDatabase.seriesDAO();
+            watchListDAO = seriesRoomDatabase.watchListDAO();
         }
         @Override
         protected Void doInBackground(Void... voids) {
             seriesDAO.DeleteAll();
+            watchListDAO.DeleteAll();
             return null;
         }
     }

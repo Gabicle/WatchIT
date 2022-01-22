@@ -36,6 +36,24 @@
         <entry key="..\:/Users/USER/AndroidStudioProjects/Series/app/src/main/res/layout/item_user_series.xml" value="0.33" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/Series/app/src/main/res/layout/slide_item.xml" value="0.1358695652173913" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/Series/app/src/main/res/menu/bottom_navigation.xml" value="0.1" />
+        <entry key="..\:/Users/USER/Desktop/SUMMER/WatchIT/app/src/main/res/drawable/btn_add_style.xml" value="0.2203125" />
+        <entry key="..\:/Users/USER/Desktop/SUMMER/WatchIT/app/src/main/res/drawable/btn_gradient_style.xml" value="0.2203125" />
+        <entry key="..\:/Users/USER/Desktop/SUMMER/WatchIT/app/src/main/res/drawable/ic_baseline_add_24.xml" value="0.2203125" />
+        <entry key="..\:/Users/USER/Desktop/SUMMER/WatchIT/app/src/main/res/drawable/indicator_default.xml" value="0.2203125" />
+        <entry key="..\:/Users/USER/Desktop/SUMMER/WatchIT/app/src/main/res/drawable/indicator_selected.xml" value="0.2203125" />
+        <entry key="..\:/Users/USER/Desktop/SUMMER/WatchIT/app/src/main/res/drawable/indicator_selector.xml" value="0.2203125" />
+        <entry key="..\:/Users/USER/Desktop/SUMMER/WatchIT/app/src/main/res/drawable/loading_shape.xml" value="0.2203125" />
+        <entry key="..\:/Users/USER/Desktop/SUMMER/WatchIT/app/src/main/res/drawable/search_input_dark_style.xml" value="0.2203125" />
+        <entry key="..\:/Users/USER/Desktop/SUMMER/WatchIT/app/src/main/res/drawable/search_input_style.xml" value="0.2203125" />
+        <entry key="..\:/Users/USER/Desktop/SUMMER/WatchIT/app/src/main/res/layout/activity_intro.xml" value="0.25" />
+        <entry key="..\:/Users/USER/Desktop/SUMMER/WatchIT/app/src/main/res/layout/activity_login.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/USER/Desktop/SUMMER/WatchIT/app/src/main/res/layout/activity_main.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/USER/Desktop/SUMMER/WatchIT/app/src/main/res/layout/fragment_discover.xml" value="0.25" />
+        <entry key="..\:/Users/USER/Desktop/SUMMER/WatchIT/app/src/main/res/layout/fragment_profile.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/USER/Desktop/SUMMER/WatchIT/app/src/main/res/layout/fragment_series.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/USER/Desktop/SUMMER/WatchIT/app/src/main/res/layout/item_discover_card.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/USER/Desktop/SUMMER/WatchIT/app/src/main/res/layout/item_user_series.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/USER/Desktop/SUMMER/WatchIT/app/src/main/res/layout/layout_screen.xml" value="0.20416666666666666" />
       </map>
     </option>
   </component>

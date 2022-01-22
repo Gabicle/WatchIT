@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.EditText;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -37,7 +38,6 @@ public class DiscoverFragment extends Fragment {
     {
         this.fragmentManager = fragmentManager;
     }
-
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -70,8 +70,8 @@ public class DiscoverFragment extends Fragment {
 
 
         //sets status bar to transparent
-        Window w = getActivity().getWindow();
-        w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
+//        Window w = getActivity().getWindow();
+//        w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
 
         //RECYCLER VIEW ADAPTER SETUP
         discoverRV = view.findViewById(R.id.rv_discover_series);

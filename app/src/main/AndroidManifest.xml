@@ -12,6 +12,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Series">
         <activity
+            android:name=".activities.ResetPasswordActivity"
+            android:exported="true"
+            android:label="@string/title_activity_reset_password"
+            android:theme="@style/Theme.Series.NoActionBar" />
+        <activity
             android:name=".activities.LoginActivity"
             android:exported="true" />
         <activity
@@ -28,9 +33,7 @@
         </activity>
         <activity
             android:name=".activities.MainActivity"
-            android:exported="true">
-
-        </activity>
+            android:exported="true"></activity>
     </application>
 
 </manifest>

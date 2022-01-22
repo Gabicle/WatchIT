@@ -37,8 +37,8 @@ public class IntroActivity extends AppCompatActivity {
 
         //when this activity is about to be launched we check if its opened before
         if (restorePrefData()){
-            Intent registerActivity = new Intent(getApplicationContext(), RegisterActivity.class);
-            startActivity(registerActivity);
+            Intent loginActivity = new Intent(getApplicationContext(), LoginActivity.class);
+            startActivity(loginActivity);
             finish();
         }
 

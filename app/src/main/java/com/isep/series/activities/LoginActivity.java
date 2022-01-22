@@ -15,6 +15,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 import android.widget.Toolbar;
@@ -35,6 +36,7 @@ public class LoginActivity extends AppCompatActivity {
     private FirebaseAuth auth;
     private ProgressBar progressBar;
     private Button btnSignup, btnLogin, btnReset;
+    private ImageView loginImg;
 
 
     @Override
@@ -61,6 +63,8 @@ public class LoginActivity extends AppCompatActivity {
         btnSignup = (Button) findViewById(R.id.btn_signup);
         btnLogin = (Button) findViewById(R.id.loginBtn);
         btnReset = (Button) findViewById(R.id.btn_reset_password);
+        loginImg = (ImageView) findViewById(R.id.login_img);
+        loginImg.setImageResource(R.drawable.intro1);
 
         //Get Firebase auth instance
         auth = FirebaseAuth.getInstance();

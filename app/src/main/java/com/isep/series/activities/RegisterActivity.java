@@ -11,6 +11,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
@@ -30,6 +31,7 @@ public class RegisterActivity extends AppCompatActivity {
     private Button btnSignIn, btnSignUp, btnResetPassword;
     private ProgressBar progressBar;
     private FirebaseAuth auth;
+    ImageView regImg;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,14 +46,18 @@ public class RegisterActivity extends AppCompatActivity {
         inputEmail = (EditText) findViewById(R.id.regMail);
         inputPassword = (EditText) findViewById(R.id.regPassword);
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
-        btnResetPassword = (Button) findViewById(R.id.btn_reset_password);
+        regImg = (ImageView) findViewById(R.id.reg_img);
 
-        btnResetPassword.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(RegisterActivity.this, ResetPasswordActivity.class));
-            }
-        });
+        regImg.setImageResource(R.drawable.intro1);
+
+//        btnResetPassword = (Button) findViewById(R.id.btn_reset_password);
+//
+//        btnResetPassword.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                startActivity(new Intent(RegisterActivity.this, ResetPasswordActivity.class));
+//            }
+//        });
 
         btnSignIn.setOnClickListener(new View.OnClickListener() {
             @Override

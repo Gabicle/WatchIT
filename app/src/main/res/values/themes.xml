@@ -4,8 +4,8 @@
     <style name="Theme.Series" parent="Theme.MaterialComponents.DayNight.NoActionBar">
 
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/myP</item>
-        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorPrimary">@color/wi_colormain</item>
+        <item name="colorPrimaryVariant">@color/wi_colorsecondary</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/teal_200</item>

@@ -3,12 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="160dp">
+    android:layout_height="180dp">
 
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="0dp"
-        android:layout_height="110dp"
+        android:layout_height="140dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:background="@drawable/series_container_bg"
@@ -20,7 +20,7 @@
     <ImageView
         android:id="@+id/up_series_img"
         android:layout_width="110dp"
-        android:layout_height="110dp"
+        android:layout_height="140dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:scaleType="centerCrop"
@@ -32,11 +32,14 @@
 
     <TextView
         android:id="@+id/up_series_title"
-        android:layout_width="wrap_content"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
+        android:background="@color/wi_colorsecondary"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
+        android:breakStrategy="simple"
         android:text="SERIES TITLE"
+        android:textColor="@color/white"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/up_series_img"
         app:layout_constraintTop_toTopOf="@+id/imageView2" />
@@ -48,6 +51,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:text="S01 | E01"
+        android:textColor="@color/white"
         app:layout_constraintStart_toEndOf="@+id/up_series_img"
         app:layout_constraintTop_toBottomOf="@+id/up_series_title" />
 
@@ -57,17 +61,19 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
         android:text=" +39"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="@+id/up_seasons"
         app:layout_constraintStart_toEndOf="@+id/up_seasons"
         app:layout_constraintTop_toTopOf="@+id/up_seasons" />
 
     <TextView
         android:id="@+id/up_episode_title"
-        android:layout_width="wrap_content"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:text="Episode Title"
+        android:textColor="@color/white"
         app:layout_constraintStart_toEndOf="@+id/up_series_img"
         app:layout_constraintTop_toBottomOf="@+id/up_seasons" />
 
@@ -75,7 +81,7 @@
         android:id="@+id/up_check_icon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="68dp"
         android:layout_marginEnd="24dp"
         app:layout_constraintEnd_toEndOf="@+id/imageView2"
         app:layout_constraintTop_toTopOf="@+id/imageView2"
@@ -86,6 +92,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
+        android:textColor="@color/wi_colorcomplement"
+        android:textAllCaps="true"
+        android:textStyle="bold"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:text="date"

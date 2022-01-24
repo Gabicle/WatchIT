@@ -16,6 +16,7 @@ import android.content.Intent;
 
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
@@ -35,6 +36,7 @@ public class ProfileFragment extends Fragment {
     private ProgressBar progressBar;
     private FirebaseAuth.AuthStateListener authListener;
     private FirebaseAuth auth;
+    private ImageView profileImg;
 
 
     @Nullable
@@ -71,11 +73,14 @@ public class ProfileFragment extends Fragment {
         sendEmail = (Button) view.findViewById(R.id.send);
         remove = (Button) view.findViewById(R.id.remove);
         signOut = (Button) view.findViewById(R.id.sign_out);
+        profileImg = (ImageView) view.findViewById(R.id.profile_img);
 
         oldEmail = (EditText) view.findViewById(R.id.old_email);
         newEmail = (EditText) view.findViewById(R.id.new_email);
         password = (EditText) view.findViewById(R.id.password);
         newPassword = (EditText) view.findViewById(R.id.newPassword);
+
+        profileImg.setImageResource(R.drawable.ic_prof);
 
         oldEmail.setVisibility(View.GONE);
         newEmail.setVisibility(View.GONE);

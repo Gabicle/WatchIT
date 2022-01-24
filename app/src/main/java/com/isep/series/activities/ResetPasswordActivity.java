@@ -6,6 +6,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
@@ -24,6 +25,7 @@ public class ResetPasswordActivity extends AppCompatActivity {
     private Button btnReset, btnBack;
     private FirebaseAuth auth;
     private ProgressBar progressBar;
+    private ImageView fpPassImg;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +36,9 @@ public class ResetPasswordActivity extends AppCompatActivity {
         btnReset = (Button) findViewById(R.id.btn_reset_password);
         btnBack = (Button) findViewById(R.id.btn_back);
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
+        fpPassImg = findViewById(R.id.fpass_img);
+
+        fpPassImg.setImageResource(R.drawable.ic_fp);
 
         auth = FirebaseAuth.getInstance();
 

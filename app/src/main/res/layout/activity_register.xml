@@ -4,18 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="@dimen/activity_horizontal_margin"
+    android:background="@color/wi_colormain"
     tools:context=".activities.RegisterActivity">
 
     <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="90dp"
-        android:layout_height="90dp"
-        app:layout_constraintBottom_toTopOf="@+id/regMail"
+        android:id="@+id/reg_img"
+        android:layout_width="96dp"
+        android:layout_height="102dp"
+        android:layout_marginTop="90dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/avatars" />
+        tools:srcCompat="@drawable/intro1" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"
@@ -30,15 +30,19 @@
         android:layout_width="265dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="4dp"
+        android:backgroundTint="@color/white"
         android:ems="10"
         android:hint="Email"
         android:inputType="textPersonName"
-        android:minHeight="48dp"
+        android:textColor="@color/white"
+        android:textColorHint="#A8A2A2"
         app:layout_constraintBottom_toTopOf="@+id/guideline2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <EditText
         android:id="@+id/regPassword"
@@ -51,6 +55,9 @@
         android:hint="Password"
         android:inputType="textPassword"
         android:minHeight="48dp"
+        android:textColorHint="#A8A2A2"
+        android:backgroundTint="@color/white"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline2" />
@@ -63,6 +70,9 @@
         android:hint="Confirm Password"
         android:inputType="textPassword"
         android:minHeight="48dp"
+        android:textColorHint="#A8A2A2"
+        android:backgroundTint="@color/white"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/regPassword" />
@@ -70,35 +80,34 @@
     <Button
         android:id="@+id/regBtn"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@color/myAccent"
+        android:layout_height="53dp"
+        android:backgroundTint="@color/wi_colorcomplement"
         android:text="@string/action_sign_in_short"
-        android:textColor="@android:color/black"
+        android:textColor="@color/wi_colorsecondary"
         android:textStyle="bold"
-        style="?android:textAppearanceSmall"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/regPassword2" />
-    <Button
-        android:id="@+id/btn_reset_password"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dip"
-        android:background="@null"
-        android:text="@string/btn_forgot_password"
-        android:textAllCaps="false"
-        android:textColor="@color/myAccent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/regBtn"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/regPassword2"
+        app:layout_constraintVertical_bias="0.13" />
+<!--    <Button-->
+<!--        android:id="@+id/btn_reset_password"-->
+<!--        android:layout_width="fill_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="20dip"-->
+<!--        android:background="@null"-->
+<!--        android:text="@string/btn_forgot_password"-->
+<!--        android:textAllCaps="false"-->
+<!--        android:textColor="@color/myAccent"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/regBtn"-->
+<!--        />-->
     <Button
         android:id="@+id/sign_in_button"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dip"
         android:background="@null"
         android:text="@string/btn_link_to_login"
         android:textAllCaps="false"
@@ -107,9 +116,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_reset_password"
-
-        />
+        app:layout_constraintTop_toBottomOf="@+id/regBtn" />
 
     <ProgressBar
         android:id="@+id/progressBar"
@@ -120,5 +127,18 @@
         app:layout_constraintEnd_toEndOf="@+id/regBtn"
         app:layout_constraintStart_toStartOf="@+id/regBtn"
         app:layout_constraintTop_toTopOf="@+id/regBtn" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="REGISTER"
+        android:textColor="@color/white"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/reg_img"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

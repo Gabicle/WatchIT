@@ -86,8 +86,4 @@ public class WatchListFragment extends Fragment {
     }
 
 
-    private void initViews(View view) {
-        rvSeries = view.findViewById(R.id.rv_watchlist);
-        rvSeries.setLayoutManager(new LinearLayoutManager(view.getContext()));
-    }
 }

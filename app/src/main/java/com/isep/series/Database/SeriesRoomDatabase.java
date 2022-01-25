@@ -10,19 +10,22 @@ import androidx.room.RoomDatabase;
 import androidx.sqlite.db.SupportSQLiteDatabase;
 
 import com.isep.series.interfaces.SeriesDAO;
+import com.isep.series.interfaces.UpcomingDAO;
 import com.isep.series.interfaces.WatchListDAO;
 import com.isep.series.models.Entities.Series;
+import com.isep.series.models.Entities.UpcomingSeries;
 import com.isep.series.models.Entities.WatchList;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-@Database(entities = {Series.class, WatchList.class},version = 3, exportSchema = false)
+@Database(entities = {Series.class, WatchList.class, UpcomingSeries.class},version = 4, exportSchema = false)
 public abstract class SeriesRoomDatabase  extends RoomDatabase {
 
 
     public abstract SeriesDAO seriesDAO();
     public abstract WatchListDAO watchListDAO();
+    public abstract UpcomingDAO upcomingDAO();
 
     private static volatile SeriesRoomDatabase INSTANCE;
     private static final int NUMBER_OF_THREADS = 4;
@@ -67,15 +70,18 @@ public abstract class SeriesRoomDatabase  extends RoomDatabase {
     static  class  PopulateDbAsyn extends AsyncTask<Void,Void,Void> {
         private SeriesDAO seriesDAO;
         private WatchListDAO watchListDAO;
+        private UpcomingDAO upcomingDAO;
         public PopulateDbAsyn(SeriesRoomDatabase seriesRoomDatabase)
         {
             seriesDAO=seriesRoomDatabase.seriesDAO();
             watchListDAO = seriesRoomDatabase.watchListDAO();
+            upcomingDAO = seriesRoomDatabase.upcomingDAO();
         }
         @Override
         protected Void doInBackground(Void... voids) {
             seriesDAO.DeleteAll();
             watchListDAO.DeleteAll();
+            upcomingDAO.DeleteAll();
             return null;
         }
     }
